@@ -12,7 +12,7 @@
 .global_container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 12px;
 }
 
 .image {
@@ -72,6 +72,12 @@
     fill: transparent;
     width: 19px;
     height: 21px;
+}
+
+.heart_svg:hover {
+    stroke: transparent;
+    fill: var(--red);
+    transition: var(--animation-duration);
 }
 
 .show_more_btn {

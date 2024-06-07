@@ -1,0 +1,42 @@
+.input {
+    height: 56px;
+    width: 360px;
+    border-radius: 10px;
+    background-color: var(--white);
+    border: none;
+    position: absolute;
+    top: 132px;
+    padding-left: 47px;
+}
+
+.location_text {
+    color: var(--gray);
+    font-size: 16px;
+}
+
+.location_search_container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-bottom: 32px;
+}
+
+.location_svg {
+    fill: transparent;
+    stroke: var(--black);
+    width: 18px;
+    height: 20px;
+}
+
+.svg_container {
+    position: relative;
+    top: 23px;
+    left: 18px;
+}
+
+.input_placeholder {
+    font-size: 16px;
+    position: relative;
+    top: -7px;
+    left: 45px;
+}

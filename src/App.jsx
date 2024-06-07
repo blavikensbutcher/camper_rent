@@ -1,7 +1,6 @@
 import { lazy, useEffect } from 'react';
 import { routes } from './routes';
 import { useDispatch } from 'react-redux';
-import { refreshUser } from './redux/auth/operations';
 import {Navigate, Route, Routes} from 'react-router-dom';
 import Layout from './shared/components/Layout/Layout';
 
@@ -10,13 +9,9 @@ const CatalogPage = lazy(() => import('./pages/CatalogPage'));
 const FavoritesPage = lazy(() => import('./pages/FavoritesPage.jsx'));
 
 export default function App() {
-  const dispatch = useDispatch();
 
   const { HOME, CATALOG, FAVORITES } = routes;
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
 
   return (
     <Routes>

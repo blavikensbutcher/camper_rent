@@ -43,7 +43,7 @@ export const CamperItem = ({ data }) => {
         <div className={css.tags_container}>
           <TagsList data={data} adults={data.adults} />
         </div>
-        <Button className={css.show_more_btn}>Show More</Button>
+        <Button>Show More</Button>
       </div>
     </li>
   );
