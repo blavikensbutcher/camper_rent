@@ -1,0 +1,13 @@
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--silver);
+    border-radius: 100px;
+    padding: 12px 14px;
+    height: 44px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: normal;
+}

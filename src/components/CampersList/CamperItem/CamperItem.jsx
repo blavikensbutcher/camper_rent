@@ -1,55 +1,49 @@
 import Button from "../../../shared/components/Button/Button.jsx";
-import css from './CamperItem.module.css'
+import css from "./CamperItem.module.css";
 import SharedSVG from "../../../shared/sharedSVG/SharedSvg.jsx";
-import {truncateString} from "../../../../helpers/truncateString.js";
+import { truncateString } from "../../../../helpers/truncateString.js";
+import { TagsList } from "../../TagsList/TagsList.jsx";
 
-export const CamperItem = ({data }) => {
+export const CamperItem = ({ data }) => {
 
-
-
-  console.log(data)
-
-
-  const avrgMark = "4.4"
-  const reviews = "2 reviews"
-  const location = "Kyiv, Ukraine"
-
+  const avrgMark = "4.4";
+  const reviews = "2 reviews";
 
   return (
     <li className={css.card_item}>
       <img src={data.gallery[0]} width={300} className={css.image} />
-      <div>
+      <div className={css.global_container}>
         <div className={css.description_container}>
-          <h2>{data.name}</h2>
-          <p>
-            €{data.price} <button><SharedSVG svgId={"heart"} className={css.heart_svg}/></button>
-          </p>
-
+          <div className={css.header_name}>
+            <h2>{data.name}</h2>
+            <p className={css.price}>
+              €{data.price}.00{" "}
+              <button>
+                <SharedSVG svgId={"heart"} className={css.heart_svg} />
+              </button>
+            </p>
+          </div>
+          <div className={css.location_reviews_container}>
           <span>
             <SharedSVG
               svgId={"rating"}
-              width={16}
-              height={16}
               className={css.icon}
             />{" "}
-            {avrgMark} ({reviews})
+            {avrgMark} ({data.reviews.length} reviews)
           </span>
           <span>
             <SharedSVG svgId={"location"} className={css.location_svg} />{" "}
             {data.location}
           </span>
+          </div>
           <p className={css.camper_descr}>
             {truncateString(data.description, 100)}
           </p>
         </div>
         <div className={css.tags_container}>
-          <Button>2 adults</Button>
-          <Button>Automatic</Button>
-          <Button>Petrol</Button>
-          <Button>1 beds</Button>
-          <Button>AC</Button>
+          <TagsList data={data} adults={data.adults} />
         </div>
-        <Button>Show More</Button>
+        <Button className={css.show_more_btn}>Show More</Button>
       </div>
     </li>
   );

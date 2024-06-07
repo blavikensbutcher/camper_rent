@@ -73,3 +73,17 @@ K
 vite.config.js,2/3/23e488f27597a265a6ab2b1efbe18221c6f88c2f
 I
 helpers/truncateString.js,e/9/e9bd240a356ce0730e70a219543df16066ddde75
+T
+$src/components/TagsList/TagsList.jsx,3/4/345b3557d1b70a74a4aa69bf84a705db3ecdb243
+[
++src/components/TagsList/TagItem/TagItem.jsx,8/d/8db97f5590c74693ed305980de1798bc60f5847c
+b
+2src/components/TagsList/TagItem/TagItem.module.css,e/f/ef291be8d6888eb3b88abfcdbd56eca4b6a451f0
+c
+3src/components/TagsList/TagItem/TagsList.module.css,6/e/6e4c6c8f3a9929513e869229740abfce036ffc71
+[
++src/components/TagsList/TagsList.module.css,b/9/b908adb8d34aa23a262a27109275f5ab565fad77
+a
+1src/components/CampersList/CampersList.module.css,2/5/25a4fc6e7a5ccf8550a3d100001fc0d3a41756aa
+\
+,src/components/SettingsList/SettingsList.jsx,4/7/472bec08117940a454ec9b47fc1f53494654e257
