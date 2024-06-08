@@ -10,12 +10,10 @@ import {
 } from 'redux-persist';
 import { filtersReducer } from './filters/filterSlice';
 import { contactApi, contactsReducer } from './contacts/camperApi.js';
-import { authReducer } from './auth/authSlice';
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
-    filter: filtersReducer,
+    filteredVans: filtersReducer,
     [contactApi.reducerPath]: contactsReducer,
   },
   middleware: getDefaultMiddleware => [

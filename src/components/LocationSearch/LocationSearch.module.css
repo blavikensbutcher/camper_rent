@@ -9,6 +9,7 @@
     padding-left: 47px;
 }
 
+
 .location_text {
     pointer-events: none;
     color: var(--gray);
@@ -19,7 +20,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 8px;
-    margin-bottom: 32px;
+    margin-bottom: 64px;
 }
 
 .location_svg {

@@ -1,27 +1,33 @@
-import { useState, useEffect } from 'react';
+import {  useEffect } from 'react';
 import { CamperItem } from "./CamperItem/CamperItem.jsx";
-import { useGetAllCampersQuery } from "../../redux/contacts/camperApi.js";
 import css from './CampersList.module.css'
 
-export const CampersList = () => {
-  const { data } = useGetAllCampersQuery();
-  const [campers, setCampers] = useState([]);
+
+export const CampersList = ({data, campers, filteredCampers, setCampers, setFilteredCampers, page, setPage}) => {
+
+  const incrementPage = () => {
+    setPage(page + 3)
+  }
 
   useEffect(() => {
     if (data) {
       setCampers(data);
+      setFilteredCampers(data.slice(0, page));
     }
-  }, [data]);
+  }, [data, page]);
 
   if (!campers.length) {
     return <div>Loading...</div>;
   }
 
   return (
+      <div>
       <ul className={css.list_items}>
-        {campers.map((item, idx) => (
-            <CamperItem data={item} key={idx} />
+        {filteredCampers.map((item, idx) => (
+            <CamperItem data={item} key={idx} page={page} setPage={setPage}/>
         ))}
       </ul>
+        {page >= filteredCampers.length && <button className={css.load_more_btn} onClick={incrementPage}>Load More</button>}
+      </div>
   );
 };

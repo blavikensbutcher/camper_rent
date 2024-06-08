@@ -21,7 +21,7 @@ export const contactApi = createApi({
   }),
 });
 
-export const { useGetAllCampersQuery, useGetOneCamperQuery } = contactApi;
+export const { useGetAllCampersQuery } = contactApi;
 
 const campersPersistConfig = {
   key: "campers",

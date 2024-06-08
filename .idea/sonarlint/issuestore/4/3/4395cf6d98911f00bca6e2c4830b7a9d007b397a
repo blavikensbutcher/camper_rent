@@ -1,0 +1,13 @@
+
+Kjavascript:S1128"(Remove this unused import of 'useState'.(×¢Ñ8ÅÛ÷½ÿ1
+Mjavascript:S6774"%'data' is missing in props validation(«›Â›úÿÿÿÿ8ÅÛ÷½ÿ1
+Tjavascript:S6749",A fragment with only one child is redundant.(™åÑğüÿÿÿÿ8ÅÛ÷½ÿ1
+îjavascript:S6851"ÅRedundant alt attribute. Screen-readers already announce `img` tags as an image. You don\u8217t need to use the words `image`, `photo,` or `picture` (or any specified custom words) in the alt prop.(ŸÚ¨¤ûÿÿÿÿ8ÅÛ÷½ÿ1
+Ujavascript:S6774"-'data.gallery' is missing in props validation(ŸÚ¨¤ûÿÿÿÿ8ÅÛ÷½ÿ1
+Rjavascript:S6774"*'data.name' is missing in props validation(€Ú™ıÿÿÿÿ8ÅÛ÷½ÿ1
+Njavascript:S6774"+'data.price' is missing in props validation(…çªû8ÅÛ÷½ÿ1
+Pjavascript:S6774!"-'data.reviews' is missing in props validation(µß²¯8ÅÛ÷½ÿ1
+Wjavascript:S6774!"4'data.reviews.length' is missing in props validation(µß²¯8ÅÛ÷½ÿ1
+Qjavascript:S6774%".'data.location' is missing in props validation(ÏÜçş8ÅÛ÷½ÿ1
+Yjavascript:S6774)"1'data.description' is missing in props validation(³†Î›úÿÿÿÿ8ÅÛ÷½ÿ1
+Tjavascript:S6774-",'data.adults' is missing in props validation(Ì¾Şáùÿÿÿÿ8ÅÛ÷½ÿ1
