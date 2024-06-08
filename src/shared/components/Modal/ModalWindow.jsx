@@ -6,6 +6,7 @@ import { truncateString } from "../../../../helpers/truncateString.js";
 import { Link } from "react-router-dom";
 import {TagsList} from "../../../components/TagsList/TagsList.jsx";
 import {VehicleInfo} from "../../../components/VehicleInfo/VehicleInfo.jsx";
+import {BookForm} from "../../../components/BookForm/BookForm.jsx";
 
 export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
     const [showFeatures, setShowFeatures] = useState(false);
@@ -63,7 +64,7 @@ export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
 
                         {showFeatures && (
                             <div>
-                               <div>
+                               <div className={css.tags_list}>
                                    <ul className={css.features_ul}>
                                        <li><TagsList data={data}/></li>
                                        <li><VehicleInfo data={data}/></li>
@@ -74,8 +75,7 @@ export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
 
                         {showReviews && (
                             <div>
-                                {/* Додайте вміст "Reviews" тут */}
-                                <p>Reviews Content</p>
+                              <BookForm />
                             </div>
                         )}
 
