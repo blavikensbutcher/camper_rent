@@ -10,7 +10,6 @@ export const SettingsList = ({data, campers, filteredCampers, setCampers, setFil
             <LocationSearch filteredCampers={filteredCampers} setFilteredCampers={setFilteredCampers}/>
             <VehicleEquipment filteredCampers={filteredCampers} setFilteredCampers={setFilteredCampers}/>
             <VehicleType filteredCampers={filteredCampers} setFilteredCampers={setFilteredCampers} />
-            <Button>Search</Button>
         </div>
     )
 }

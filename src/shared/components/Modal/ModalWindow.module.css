@@ -83,4 +83,7 @@
     row-gap: 44px;
 }
 
-
+.review_container {
+    display: flex;
+    column-gap: 24px;
+}

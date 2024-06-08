@@ -2,7 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    width: 526px;
+    width: auto;
+}
+
+.modal_tags_container {
+    width: 430px;
+    margin: 0 auto;
 }
 
 .svg_one {

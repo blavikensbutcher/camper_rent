@@ -3,10 +3,10 @@ import { Modal } from "antd";
 import css from './ModalWindow.module.css'
 import SharedSVG from "../../sharedSVG/SharedSvg.jsx";
 import { truncateString } from "../../../../helpers/truncateString.js";
-import { Link } from "react-router-dom";
 import {TagsList} from "../../../components/TagsList/TagsList.jsx";
 import {VehicleInfo} from "../../../components/VehicleInfo/VehicleInfo.jsx";
 import {BookForm} from "../../../components/BookForm/BookForm.jsx";
+import {ReviewSection} from "../../../components/ReviewSection/ReviewSection.jsx";
 
 export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
     const [showFeatures, setShowFeatures] = useState(false);
@@ -63,20 +63,22 @@ export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
                         </ul>
 
                         {showFeatures && (
-                            <div>
-                               <div className={css.tags_list}>
+                            <div className={css.review_container}>
+                               <div>
                                    <ul className={css.features_ul}>
                                        <li><TagsList data={data}/></li>
                                        <li><VehicleInfo data={data}/></li>
                                    </ul></div>
-                                <div></div>
+                                <div> <BookForm /></div>
                             </div>
                         )}
 
                         {showReviews && (
-                            <div>
-                              <BookForm />
-                            </div>
+
+                            <ul className={css.review_container}>
+                                <li><ReviewSection data={data} /></li>
+                                <li><BookForm /></li>
+                            </ul>
                         )}
 
                         {/* Посилання */}

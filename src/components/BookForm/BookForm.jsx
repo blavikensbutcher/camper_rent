@@ -14,7 +14,7 @@ export const BookForm = () => {
         .required("Must be not empty"),
     email: Yup.string().email("Email should be valid"),
     date: Yup.date().required("Date must be correct"),
-    comment: Yup.string().min(10, "10 symbols min").required("Write something about your choose :)"),
+    comment: Yup.string().min(10, "10 symbols min").required("Write something about your choice :)"),
   });
 
   const nameID = useId();

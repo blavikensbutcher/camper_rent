@@ -10,7 +10,6 @@ export default function Home() {
   const [page, setPage] = useState(4);
 
   return (
-    <>
       <div style={{ display: "flex", columnGap: "25px" }}>
         <SettingsList
           data={data}
@@ -31,6 +30,5 @@ export default function Home() {
               setPage={setPage}
           />
       </div>
-    </>
   );
 }
