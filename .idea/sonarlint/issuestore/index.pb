@@ -62,3 +62,13 @@ W
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+[
++src/components/TagsList/TagsList.module.css,b/9/b908adb8d34aa23a262a27109275f5ab565fad77
+^
+.src/components/ReviewSection/ReviewSection.jsx,6/7/67550922a873de82c1b1614e4196745247240838
+e
+5src/components/ReviewSection/ReviewSection.module.css,f/4/f410403c3a758707c76ee0077aa47f454331af4e
+K
+src/shared/icons/sprite.svg,8/e/8e5e26d9d6af79116e5f4314ab4908e7ae061fa3
+\
+,src/components/SettingsList/SettingsList.jsx,4/7/472bec08117940a454ec9b47fc1f53494654e257
