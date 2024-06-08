@@ -1,5 +1,4 @@
 import css from './VehicleInfo.module.css'
-import {useGetAllCampersQuery} from "../../redux/contacts/camperApi.js";
 
 export const VehicleInfo = ({data}) => {
 

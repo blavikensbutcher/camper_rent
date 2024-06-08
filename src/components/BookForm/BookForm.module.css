@@ -1,0 +1,43 @@
+.regular_field {
+  width: 400px;
+  height: 56px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--silver);
+  padding-left: 18px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  padding: 24px;
+  width: 450px;
+}
+
+.comment_section {
+  width: 400px;
+  height: 114px;
+  border-radius: 10px;
+  background-color: var(--silver);
+  border: none;
+  padding: 14px;
+}
+
+
+.datetime_picker {
+  width: 400px;
+  height: 56px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--silver);
+  padding: 14px;
+}
+
+.error {
+  color: var(--red)
+}
+
