@@ -33,3 +33,17 @@ b
 2src/shared/components/Modal/ModalWindow.module.css,9/a/9a137d55e37a32ae9a58d282a7d2dc35aee124e8
 k
 ;src/components/CampersList/CamperItem/CamperItem.module.css,f/f/ff17fd27f30132339f843737a0503078b19cbd4f
+T
+$src/components/Features/Features.jsx,1/9/191673950a832477ca84bd50ee7e0974cff5af66
+R
+"src/components/Reviews/Reviews.jsx,3/2/3255bc9f813000d20d682ca6521553f634b84f6c
+b
+2node_modules/react-router/dist/lib/components.d.ts,9/8/9891260c77e501592134184403d00d0c3a5fac4b
+\
+,src/components/DetailedInfo/DetailedInfo.jsx,c/b/cbcab9e94fa0b9bb0d91b70f71a283ad5c269fef
+Z
+*src/components/VehicleInfo/VehicleInfo.jsx,d/3/d3a0cb4ec2a3b38dc5076bf7422867fd1eec4e69
+T
+$node_modules/@types/react/index.d.ts,e/6/e6e15d6af3efe43cb710ed81a622398127753dfa
+a
+1src/components/VehicleInfo/VehicleInfo.module.css,6/a/6a17ba52272e44dff30967a7934d3968cdd647c1
