@@ -31,6 +31,7 @@
 }
 
 .vehicle_svg {
+    pointer-events: none;
     display: flex;
     flex-shrink: 0;
     width: 45px;

@@ -3,7 +3,7 @@ import SharedSVG from "../../shared/sharedSVG/SharedSvg.jsx";
 import css from "./TagsList.module.css";
 
 export const TagsList = ({ data }) => {
-  console.log(data);
+
 
   return (
     <ul className={css.tags_container}>
@@ -21,15 +21,15 @@ export const TagsList = ({ data }) => {
           <SharedSVG svgId={"gas"} className={css.svg_one} /> Petrol
         </TagItem>
       )}
+        {data.details.kitchen === 1 && <TagItem>
+            <SharedSVG svgId={"kitchen"} className={css.svg_two} />{data.details.kitchen} Kitchen
+        </TagItem>}
       <TagItem>
-        <SharedSVG svgId={"kitchen"} className={css.svg_two} /> Kitchen
+        <SharedSVG svgId={"bed"} className={css.svg_two} />{data.details.beds} Beds
       </TagItem>
-      <TagItem>
-        <SharedSVG svgId={"bed"} className={css.svg_two} /> Beds
-      </TagItem>
-      <TagItem>
-        <SharedSVG svgId={"wind"} className={css.svg_one} /> AC
-      </TagItem>
+        {data.details.airConditioner === 1 &&  <TagItem>
+            <SharedSVG svgId={"wind"} className={css.svg_one} /> AC
+        </TagItem>}
     </ul>
   );
 };

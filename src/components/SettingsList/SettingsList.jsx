@@ -4,13 +4,13 @@ import {VehicleEquipment} from "../VehicleEquipment/VehicleEquipment.jsx";
 import {VehicleType} from "../VehicleType/VehicleType.jsx";
 import Button from "../../shared/components/Button/Button.jsx";
 
-export const SettingsList = () => {
+export const SettingsList = ({data, campers, filteredCampers, setCampers, setFilteredCampers, page, setPage}) => {
     return (
         <div className={css.settings_container}>
-            <LocationSearch />
-            <VehicleEquipment />
-            <VehicleType />
-            <Button classname={css.btn}>Search</Button>
+            <LocationSearch filteredCampers={filteredCampers} setFilteredCampers={setFilteredCampers}/>
+            <VehicleEquipment filteredCampers={filteredCampers} setFilteredCampers={setFilteredCampers}/>
+            <VehicleType filteredCampers={filteredCampers} setFilteredCampers={setFilteredCampers} />
+            <Button>Search</Button>
         </div>
     )
 }
