@@ -4,10 +4,30 @@ import css from "./CamperItem.module.css";
 import SharedSVG from "../../../shared/sharedSVG/SharedSvg.jsx";
 import { truncateString } from "../../../../helpers/truncateString.js";
 import { TagsList } from "../../TagsList/TagsList.jsx";
+import {ModalWindow} from "../../../shared/components/Modal/ModalWindow.jsx";
 
 export const CamperItem = ({ data }) => {
 
-  const avrgMark = "4.4";
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleClick = () => {
+    showModal()
+  }
+
+  let avrgMark = 0; // Инициализируем переменную для хранения средней оценки
+
+  data.reviews.forEach((item) => {
+    avrgMark += item.reviewer_rating;
+  });
+
+  avrgMark /= data.reviews.length;
 
   return (
       <>
@@ -44,9 +64,10 @@ export const CamperItem = ({ data }) => {
             <div className={css.tags_container}>
               <TagsList data={data} adults={data.adults} />
             </div>
-            <Button onClick={() => console.log("ok")}>Show More</Button>
+            <Button onClick={handleClick}>Show More</Button>
           </div>
         </li>
+        <ModalWindow data={data} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} showModal={showModal} handleCancel={handleCancel}/>
       </>
   );
 };

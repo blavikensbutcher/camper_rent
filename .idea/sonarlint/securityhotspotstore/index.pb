@@ -25,3 +25,11 @@ B
 src/pages/Home.jsx,4/3/430200dcc19df010a7afe234d14af8f3c4a0b33b
 O
 src/redux/contacts/camperApi.js,e/d/ed80d8590a8b024983f84e4d5933976bd8b3c304
+U
+%src/shared/components/Modal/Modal.jsx,4/1/4179de0f4b642e769dced0cb39b1769de929a2a5
+[
++src/shared/components/Modal/ModalWindow.jsx,c/3/c37de58a65a23cda721d4ce93109001a2e18a8a3
+b
+2src/shared/components/Modal/ModalWindow.module.css,9/a/9a137d55e37a32ae9a58d282a7d2dc35aee124e8
+k
+;src/components/CampersList/CamperItem/CamperItem.module.css,f/f/ff17fd27f30132339f843737a0503078b19cbd4f
