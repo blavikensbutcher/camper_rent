@@ -3,7 +3,7 @@ import { BASE_URL, routes } from "../../routes";
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 
-export const contactApi = createApi({
+export const campersApi = createApi({
   reducerPath: "campers",
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
@@ -14,21 +14,17 @@ export const contactApi = createApi({
       query: () => routes.HOME,
       providesTags: ["Campers"],
     }),
-    getOneCamper: builder.query({
-      query: (id) => `${routes.HOME}${id}`,
-      providesTags: ["Campers"],
-    }),
   }),
 });
 
-export const { useGetAllCampersQuery } = contactApi;
+export const { useGetAllCampersQuery } = campersApi;
 
 const campersPersistConfig = {
   key: "campers",
   storage,
 };
 
-export const contactsReducer = persistReducer(
+export const campersReducer = persistReducer(
   campersPersistConfig,
-  contactApi.reducer,
+  campersApi.reducer,
 );

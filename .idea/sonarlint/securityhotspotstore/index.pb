@@ -86,3 +86,13 @@ C
 helpers/avrgMark.js,e/0/e069c9bfc97ae862a621726730496c3916905c1a
 K
 src/pages/FavoritesPage.jsx,c/0/c0e917a7e7ee54e2e4eafd68e36fac193eba10fc
+b
+2node_modules/redux-persist/types/persistStore.d.ts,2/6/264b3a9ccc415bcd894475870c69358ef30ffc37
+c
+3node_modules/redux-persist/types/storage/index.d.ts,1/4/14a559e5f346a0fb043f85933961d45140159265
+^
+.src/components/FavoriteSection/FavoriteSection,9/6/96bb3eb82bfbef95e722fa01d821fd51b00f7e31
+i
+9src/components/FavoriteSection/FavoriteSection.module.css,a/1/a1f4309dfe6680af47aafa9ed799f6880b5532c3
+b
+2src/components/FavoriteSection/FavoriteSection.jsx,e/9/e90d3877063b9b9f65b55f9eb1298a64f3a0cf1c

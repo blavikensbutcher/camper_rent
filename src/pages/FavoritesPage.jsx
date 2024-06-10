@@ -14,9 +14,14 @@ export default function FavoritesPage() {
     const [favorite, setFavorite] = useState(useSelector(selectFilteredVans));
     const dispatch = useDispatch();
 
+    const kek = useSelector(selectFilteredVans)
+
     useEffect(() => {
         dispatch(addFilteredVans(favorite));
-    }, [favorite]);
+        setFilteredCampers(favorite)
+
+        console.log(kek)
+    }, [favorite, filteredCampers]);
 
     return (
         <div style={{ display: "flex", columnGap: "25px" }}>

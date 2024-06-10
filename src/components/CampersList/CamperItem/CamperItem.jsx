@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "../../../shared/components/Button/Button.jsx";
 import css from "./CamperItem.module.css";
 import SharedSVG from "../../../shared/sharedSVG/SharedSvg.jsx";
 import { truncateString } from "../../../../helpers/truncateString.js";
 import { TagsList } from "../../TagsList/TagsList.jsx";
 import { ModalWindow } from "../../../shared/components/Modal/ModalWindow.jsx";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  addFilteredVans, removeVan,
-  selectFilteredVans,
-} from "../../../redux/filters/filterSlice.js";
 import {handleHeart} from "../../../../helpers/handleHeart.js";
 import {avrgMark} from "../../../../helpers/avrgMark.js";
 

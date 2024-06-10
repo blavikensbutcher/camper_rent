@@ -9,13 +9,10 @@ const filtersSlice = createSlice({
     addFilteredVans: (state, action) => {
       state.filteredVans = action.payload;
     },
-    removeVan: (state, action) => {
-      state.filteredVans = state.filteredVans.filter(item => item.id !== action.payload.id);
-    },
   },
 });
 
-export const { addFilteredVans, removeVan } = filtersSlice.actions;
+export const { addFilteredVans } = filtersSlice.actions;
 
 export const filtersReducer = filtersSlice.reducer;
 

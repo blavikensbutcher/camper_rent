@@ -9,12 +9,12 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { filtersReducer } from './filters/filterSlice';
-import { contactApi, contactsReducer } from './contacts/camperApi.js';
+import { campersApi, campersReducer } from './contacts/camperApi.js';
 
 export const store = configureStore({
   reducer: {
     filteredVans: filtersReducer,
-    [contactApi.reducerPath]: contactsReducer,
+    [campersApi.reducerPath]: campersReducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
@@ -22,10 +22,9 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-    contactApi.middleware,
+    campersApi.middleware,
   ],
 
-  // devTools: process.env.NODE_ENV === 'development',
 });
 
 export const persistor = persistStore(store);
