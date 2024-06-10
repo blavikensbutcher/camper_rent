@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {addFilteredVans, selectFilteredVans} from "../redux/filters/filterSlice.js";
 import {useGetAllCampersQuery} from "../redux/contacts/camperApi.js";
+import {NoFavorites} from "../components/NoFavorites/NoFavorites.jsx";
 
 export default function FavoritesPage() {
     const { data } = useGetAllCampersQuery();
@@ -19,8 +20,6 @@ export default function FavoritesPage() {
     useEffect(() => {
         dispatch(addFilteredVans(favorite));
         setFilteredCampers(favorite)
-
-        console.log(kek)
     }, [favorite, filteredCampers]);
 
     return (
@@ -34,7 +33,7 @@ export default function FavoritesPage() {
                 page={page}
                 setPage={setPage}
             />
-            <CampersList
+            {favorite.length > 0 ? <CampersList
                 data={data}
                 campers={campers}
                 setCampers={setCampers}
@@ -44,7 +43,7 @@ export default function FavoritesPage() {
                 setPage={setPage}
                 favorite={favorite}
                 setFavorite={setFavorite}
-            />
+            /> : <NoFavorites />}
         </div>
     );
 }

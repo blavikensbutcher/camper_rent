@@ -1,25 +1,27 @@
 import Button from "../../shared/components/Button/Button.jsx";
-import css from "./BookForm.module.css";
+import css from "./BookingForm.module.css";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export const BookForm = () => {
+export const BookingForm = () => {
   const userSchema = Yup.object().shape({
     name: Yup.string()
-        .min(3, "C'mon write real name")
+        .min(3, "C'mon write a real name")
         .max(50, "Too long")
         .required("Must be not empty"),
     email: Yup.string().email("Email should be valid"),
     date: Yup.date().required("Date must be correct"),
-    comment: Yup.string().min(10, "10 symbols min").required("Write something about your choice :)"),
+    comment: Yup.string(),
   });
 
   const nameID = useId();
   const emailID = useId();
   const commentID = useId();
+
+
 
   return (
       <Formik
@@ -30,7 +32,7 @@ export const BookForm = () => {
             comment: "",
           }}
           onSubmit={(values) => {
-            console.log(values);
+              window.location.reload()
           }}
           validationSchema={userSchema}
       >
