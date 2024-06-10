@@ -144,3 +144,5 @@ P
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 i
 9node_modules/@reduxjs/toolkit/dist/query/core/module.d.ts,9/0/9084a64fec329601d1e50f6c27ac698a7f48f8d8
+Z
+*src/components/VehicleType/VehicleType.jsx,c/e/ceb48ff3d7189d7cba5bc401703dd3a842b5eaaa

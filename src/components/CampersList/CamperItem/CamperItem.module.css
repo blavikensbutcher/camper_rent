@@ -99,4 +99,11 @@
     border-radius: 100px;
 }
 
+.heart_full {
+    stroke: transparent;
+    fill: var(--red);
+    width: 19px;
+    height: 21px;
+}
+
 

@@ -6,24 +6,10 @@ import {useGetAllCampersQuery} from "../../redux/contacts/camperApi.js";
 
 export const VehicleType = ({ filteredCampers, setFilteredCampers }) => {
     const {data} = useGetAllCampersQuery()
-    // const [type, setType] = useState("");
-    //
-    // const options = {
-    //     includeScore: true,
-    //     location: 1,
-    //     keys: ["form"],
-    // };
-    //
-    // const fuse = useMemo(() => new Fuse(data, options), [data, options]);
 
     const handleClick = (e) => {
         const chosenValue = String(e.target.dataset.id);
-        console.log(filteredCampers)
         setFilteredCampers(data.filter(item => item.form === chosenValue))
-
-        // setType(chosenValue);
-        // const result = fuse.search(chosenValue);
-        // setFilteredCampers(result.map((res) => res.item));
     };
 
 

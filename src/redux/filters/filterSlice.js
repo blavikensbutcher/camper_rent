@@ -6,6 +6,7 @@ const filtersSlice = createSlice({
   name: "filter",
   initialState: {
     filteredVans: [],
+    isFavorite: false,
   },
   reducers: {
     addFilteredVans: (state, action) => {
@@ -29,3 +30,4 @@ export const filtersReducer = persistReducer(
 
 // Исправленный селектор
 export const selectFilteredVans = state => state.filters.filteredVans;
+export const selectFavorite = state => state.filters.isFavorite;
