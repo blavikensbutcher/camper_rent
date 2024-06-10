@@ -140,3 +140,7 @@ W
 'src/shared/components/Loader/Loader.jsx,e/1/e1f634e18fe1aac127d9f6937254f490f145abe4
 P
  src/shared/components/Loader.jsx,6/9/69b5e8681cd8ca9c2792ba5d4fd418593639d779
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+i
+9node_modules/@reduxjs/toolkit/dist/query/core/module.d.ts,9/0/9084a64fec329601d1e50f6c27ac698a7f48f8d8

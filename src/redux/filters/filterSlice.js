@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import storage from "redux-persist/lib/storage";
+import persistReducer from "redux-persist/es/persistReducer";
 
 const filtersSlice = createSlice({
   name: "filter",
@@ -12,9 +14,18 @@ const filtersSlice = createSlice({
   },
 });
 
+const filtersPersistConfig = {
+  key: "filters",
+  storage,
+};
+
+
 export const { addFilteredVans } = filtersSlice.actions;
 
-export const filtersReducer = filtersSlice.reducer;
+export const filtersReducer = persistReducer(
+    filtersPersistConfig,
+    filtersSlice.reducer
+);
 
 // Исправленный селектор
-export const selectFilteredVans = state => state.filteredVans.filteredVans;
+export const selectFilteredVans = state => state.filters.filteredVans;
