@@ -13,7 +13,7 @@ import { campersApi, campersReducer } from './contacts/camperApi.js';
 
 export const store = configureStore({
   reducer: {
-    filteredVans: filtersReducer,
+    filters: filtersReducer,
     [campersApi.reducerPath]: campersReducer,
   },
   middleware: getDefaultMiddleware => [
