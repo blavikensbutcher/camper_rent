@@ -29,7 +29,7 @@ export const CampersList = ({data, campers, filteredCampers, setCampers, setFilt
             <CamperItem data={item} key={idx} page={page} setPage={setPage} favorite={favorite} setFavorite={setFavorite} />
         ))}
       </ul>
-        {page >= filteredCampers.length && <button className={css.load_more_btn} onClick={incrementPage}>Load More</button>}
+        {page <= (filteredCampers.length) ? <button className={css.load_more_btn} onClick={incrementPage}>Load More</button> : null}
       </div>
   );
 };

@@ -20,9 +20,8 @@ export default function Home() {
     dispatch(addFilteredVans(favorite));
   }, [favorite]);
 
-  return (
+  return (<>
     <div style={{ display: "flex", columnGap: "25px" }}>
-
       <SettingsList
         filteredCampers={filteredCampers}
         setFilteredCampers={setFilteredCampers}
@@ -39,5 +38,6 @@ export default function Home() {
         setFavorite={setFavorite}
       />
     </div>
+      </>
   );
 }
