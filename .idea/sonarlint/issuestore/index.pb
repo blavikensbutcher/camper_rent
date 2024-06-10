@@ -72,3 +72,13 @@ K
 src/shared/icons/sprite.svg,8/e/8e5e26d9d6af79116e5f4314ab4908e7ae061fa3
 \
 ,src/components/SettingsList/SettingsList.jsx,4/7/472bec08117940a454ec9b47fc1f53494654e257
+P
+ src/redux/filters/filterSlice.js,b/8/b8b85ece1f0c2e14e28b085c2a39fe7766e5a88a
+B
+src/redux/store.js,b/f/bf7810bad55c8c031251188a5290278db09e4dfc
+Z
+*src/components/CampersList/CampersList.jsx,0/7/07c7c9b8bb9e6be667a8d16596a775a9afbc46a0
+L
+src/redux/auth/operations.js,1/9/19faf2174952358169aea38ebce7dd5b86467547
+F
+helpers/handleHeart.js,4/0/40752fa06ec7f97899b8448a6be1cc5e145d8a88

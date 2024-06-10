@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../../shared/components/Button/Button.jsx";
 import css from "./CamperItem.module.css";
 import SharedSVG from "../../../shared/sharedSVG/SharedSvg.jsx";
 import { truncateString } from "../../../../helpers/truncateString.js";
 import { TagsList } from "../../TagsList/TagsList.jsx";
 import { ModalWindow } from "../../../shared/components/Modal/ModalWindow.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addFilteredVans, removeVan,
+  selectFilteredVans,
+} from "../../../redux/filters/filterSlice.js";
 
-export const CamperItem = ({ data }) => {
+export const CamperItem = ({ data, favorite, setFavorite }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -20,7 +26,27 @@ export const CamperItem = ({ data }) => {
     showModal();
   };
 
-  let avrgMark = 0; // Инициализируем переменную для хранения средней оценки
+  const handleHeartClick = (e) => {
+
+
+    if (e.target.dataset.isclicked !== "yes") {
+      e.target.style.fill = "var(--red)";
+      e.target.style.stroke = "transparent";
+      e.target.dataset.isclicked = "yes";
+      setFavorite(prevState => {
+        return [...prevState, data];
+      })
+    } else if (e.target.dataset.isclicked === "yes") {
+      e.target.style.fill = "transparent";
+      e.target.style.stroke = "var(--black)";
+      e.target.dataset.isclicked = "no";
+
+      const removed = favorite.filter(item => item._id !== data._id)
+      setFavorite(removed)
+    }
+  };
+
+  let avrgMark = 0;
 
   data.reviews.forEach((item) => {
     avrgMark += item.reviewer_rating;
@@ -43,15 +69,15 @@ export const CamperItem = ({ data }) => {
               <h2>{data.name}</h2>
               <p className={css.price}>
                 €{data.price}.00{" "}
-                <button className={css.heart_btn}>
+                <button className={css.heart_btn} onClick={handleHeartClick}>
                   <SharedSVG svgId={"heart"} className={css.heart_svg} />
                 </button>
               </p>
             </div>
             <div className={css.location_reviews_container}>
               <span>
-                <SharedSVG svgId={"rating"} className={css.icon} /> {avrgMark} (
-                {data.reviews.length} reviews)
+                <SharedSVG svgId={"rating"} className={css.icon} />{" "}
+                {avrgMark.toFixed(1)} ({data.reviews.length} reviews)
               </span>
               <span>
                 <SharedSVG svgId={"location"} className={css.location_svg} />{" "}
