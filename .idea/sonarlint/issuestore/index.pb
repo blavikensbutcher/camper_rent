@@ -130,3 +130,13 @@ Z
 *src/components/BookingForm/BookingForm.jsx,a/e/ae3a8bd93de2136a6d3dce714b4fdf8a3b949e3c
 a
 1src/components/BookingForm/BookingForm.module.css,1/5/15c7643d5edd3c4a57b9cdc05f06cef358f6d311
+I
+helpers/truncateString.js,e/9/e9bd240a356ce0730e70a219543df16066ddde75
+F
+src/pages/NotFound.jsx,0/f/0fd26c0d3021f12cc22c9ac0036c0f3caab65157
+I
+src/pages/CatalogPage.jsx,3/6/36d7a12ecf379a6a0f2b0a10dba64fb54df01f42
+W
+'src/shared/components/Loader/Loader.jsx,e/1/e1f634e18fe1aac127d9f6937254f490f145abe4
+P
+ src/shared/components/Loader.jsx,6/9/69b5e8681cd8ca9c2792ba5d4fd418593639d779
