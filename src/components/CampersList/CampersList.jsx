@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import { CamperItem } from "./CamperItem/CamperItem.jsx";
 import css from './CampersList.module.css'
+import { Loader } from "../../shared/components/Loader/Loader.jsx";
 
 
 export const CampersList = ({data, campers, filteredCampers, setCampers, setFilteredCampers, page, setPage, favorite,setFavorite}) => {
@@ -8,6 +9,7 @@ export const CampersList = ({data, campers, filteredCampers, setCampers, setFilt
   const incrementPage = () => {
     setPage(page + 3)
   }
+
 
   useEffect(() => {
     if (data) {
@@ -17,7 +19,7 @@ export const CampersList = ({data, campers, filteredCampers, setCampers, setFilt
   }, [data, page]);
 
   if (!campers.length) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   return (
