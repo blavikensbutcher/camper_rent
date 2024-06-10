@@ -82,3 +82,7 @@ L
 src/redux/auth/operations.js,1/9/19faf2174952358169aea38ebce7dd5b86467547
 F
 helpers/handleHeart.js,4/0/40752fa06ec7f97899b8448a6be1cc5e145d8a88
+C
+helpers/avrgMark.js,e/0/e069c9bfc97ae862a621726730496c3916905c1a
+K
+src/pages/FavoritesPage.jsx,c/0/c0e917a7e7ee54e2e4eafd68e36fac193eba10fc

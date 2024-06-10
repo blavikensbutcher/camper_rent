@@ -10,6 +10,8 @@ import {
   addFilteredVans, removeVan,
   selectFilteredVans,
 } from "../../../redux/filters/filterSlice.js";
+import {handleHeart} from "../../../../helpers/handleHeart.js";
+import {avrgMark} from "../../../../helpers/avrgMark.js";
 
 export const CamperItem = ({ data, favorite, setFavorite }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,32 +29,20 @@ export const CamperItem = ({ data, favorite, setFavorite }) => {
   };
 
   const handleHeartClick = (e) => {
+    let tag = handleHeart(e)
 
-
-    if (e.target.dataset.isclicked !== "yes") {
-      e.target.style.fill = "var(--red)";
-      e.target.style.stroke = "transparent";
-      e.target.dataset.isclicked = "yes";
+    if (tag === 'yes') {
       setFavorite(prevState => {
         return [...prevState, data];
       })
-    } else if (e.target.dataset.isclicked === "yes") {
-      e.target.style.fill = "transparent";
-      e.target.style.stroke = "var(--black)";
-      e.target.dataset.isclicked = "no";
-
+    }
+    else {
       const removed = favorite.filter(item => item._id !== data._id)
       setFavorite(removed)
     }
   };
 
-  let avrgMark = 0;
-
-  data.reviews.forEach((item) => {
-    avrgMark += item.reviewer_rating;
-  });
-
-  avrgMark /= data.reviews.length;
+    const avMark = avrgMark(data);
 
   return (
     <>
@@ -77,7 +67,7 @@ export const CamperItem = ({ data, favorite, setFavorite }) => {
             <div className={css.location_reviews_container}>
               <span>
                 <SharedSVG svgId={"rating"} className={css.icon} />{" "}
-                {avrgMark.toFixed(1)} ({data.reviews.length} reviews)
+                {avMark.toFixed(1)} ({data.reviews.length} reviews)
               </span>
               <span>
                 <SharedSVG svgId={"location"} className={css.location_svg} />{" "}
@@ -100,7 +90,7 @@ export const CamperItem = ({ data, favorite, setFavorite }) => {
         setIsModalOpen={setIsModalOpen}
         showModal={showModal}
         handleCancel={handleCancel}
-        avrgMark={avrgMark}
+        avrgMark={avMark}
       />
     </>
   );

@@ -18,7 +18,6 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(addFilteredVans(favorite));
-      console.log(favorite)
   }, [favorite]);
 
   return (
