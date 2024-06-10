@@ -5,8 +5,6 @@ import React from "react";
 export const ReviewSection = ({ data }) => {
     const reviews = data.reviews;
 
-    console.log(reviews);
-
     return (
         <div className={css.review_container}>
             {reviews.map((item) => {

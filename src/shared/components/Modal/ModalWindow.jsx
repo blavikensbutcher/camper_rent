@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Modal } from "antd";
 import css from './ModalWindow.module.css'
-import SharedSVG from "../../sharedSVG/SharedSvg.jsx";
 import { truncateString } from "../../../../helpers/truncateString.js";
 import {TagsList} from "../../../components/TagsList/TagsList.jsx";
 import {VehicleInfo} from "../../../components/VehicleInfo/VehicleInfo.jsx";
-import {BookForm} from "../../../components/BookForm/BookForm.jsx";
+import {BookingForm} from "../../../components/BookingForm/BookingForm.jsx";
 import {ReviewSection} from "../../../components/ReviewSection/ReviewSection.jsx";
+import {LocationAndRating} from "../../../components/LocationAndRating/LocationAndRating.jsx";
 
 export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
     const [showFeatures, setShowFeatures] = useState(false);
@@ -35,15 +35,7 @@ export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
                     <div className={css.description_container}>
                         <div>
                             <h2 className={css.header_name}>{data.name}</h2>
-                            <div className={css.location_reviews_container}>
-                                <span>
-                                    <SharedSVG svgId={"rating"}
-                                               className={css.icon}/> {avrgMark} ({data.reviews.length} reviews)
-                                </span>
-                                <span>
-                                    <SharedSVG svgId={"location"} className={css.location_svg}/> {data.location}
-                                </span>
-                            </div>
+                            <LocationAndRating data={data} avMark={avrgMark} className={css.container}/>
                             <p className={css.price}>€{data.price}.00 </p>
                         </div>
                         <div className={css.image_container}>
@@ -69,7 +61,7 @@ export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
                                        <li><TagsList data={data}/></li>
                                        <li><VehicleInfo data={data}/></li>
                                    </ul></div>
-                                <div> <BookForm /></div>
+                                <div> <BookingForm /></div>
                             </div>
                         )}
 
@@ -77,11 +69,9 @@ export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
 
                             <ul className={css.review_container}>
                                 <li><ReviewSection data={data} /></li>
-                                <li><BookForm /></li>
+                                <li><BookingForm /></li>
                             </ul>
                         )}
-
-                        {/* Посилання */}
 
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import {VehicleType} from "../VehicleType/VehicleType.jsx";
 import Button from "../../shared/components/Button/Button.jsx";
 import {FavoriteSection} from "../FavoriteSection/FavoriteSection.jsx";
 
-export const SettingsList = ({data, campers, filteredCampers, setCampers, setFilteredCampers, page, setPage}) => {
+export const SettingsList = ({filteredCampers, setFilteredCampers}) => {
     return (
         <div className={css.settings_container}>
             <LocationSearch filteredCampers={filteredCampers} setFilteredCampers={setFilteredCampers}/>

@@ -37,14 +37,10 @@
     margin-bottom: 8px;
 }
 
-.location_reviews_container {
-    display: flex;
-    column-gap: 16px;
-    margin-bottom: 24px;
-}
-
 .price {
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     font-weight: bold;
     margin-right: 10px;
@@ -61,6 +57,10 @@
 .icon {
     width: 16px;
     height: 16px;
+}
+
+.header {
+    width: 360px;
 }
 
 .tags_container {
@@ -99,9 +99,4 @@
     border-radius: 100px;
 }
 
-.location_span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-}
+
