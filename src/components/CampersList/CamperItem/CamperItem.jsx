@@ -64,7 +64,7 @@ export const CamperItem = ({ data, favorite, setFavorite }) => {
                 <SharedSVG svgId={"rating"} className={css.icon} />{" "}
                 {avMark.toFixed(1)} ({data.reviews.length} reviews)
               </span>
-              <span>
+              <span className={css.location_span}>
                 <SharedSVG svgId={"location"} className={css.location_svg} />{" "}
                 {data.location}
               </span>

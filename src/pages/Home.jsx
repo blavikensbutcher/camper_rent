@@ -7,7 +7,8 @@ import {
   addFilteredVans,
   selectFilteredVans,
 } from "../redux/filters/filterSlice.js";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { FavoriteSection } from "../components/FavoriteSection/FavoriteSection.jsx";
 
 export default function Home() {
   const { data } = useGetAllCampersQuery();
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <div style={{ display: "flex", columnGap: "25px" }}>
+
       <SettingsList
         data={data}
         campers={campers}

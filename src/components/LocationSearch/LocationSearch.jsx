@@ -30,13 +30,13 @@ export const LocationSearch = ({ filteredCampers, setFilteredCampers }) => {
 
     return (
         <div className={css.location_search_container}>
-            <p className={css.location_text}>Локація</p>
+            <p className={css.location_text}>Location</p>
             <input
                 className={css.input}
                 type="text"
                 onInput={handleInput}
                 autoFocus={true}
-                placeholder="Місто"
+                placeholder="City"
             />
             <span className={css.svg_container}>
         <SharedSVG className={css.location_svg} svgId={"location"} />

@@ -18,6 +18,7 @@
 
 .image {
     object-fit: cover;
+    object-position: -186px;
 }
 
 .description_container {
@@ -96,4 +97,11 @@
     height: 56px;
     background-color: var(--red);
     border-radius: 100px;
+}
+
+.location_span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
 }
