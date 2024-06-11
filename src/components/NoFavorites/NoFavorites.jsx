@@ -8,7 +8,7 @@ export const NoFavorites = () => {
       <div className={css.container}>
         <p className={css.text}>you didn't add anything</p>
         <NavLink to="/" className={css.filter_btn}>
-            <SharedSVG svgId={"heart_broken"} className={css.heart} /> Home
+          <SharedSVG svgId={"heart_broken"} className={css.heart} /> Home
         </NavLink>
       </div>
     </div>

@@ -1,48 +1,47 @@
 .input {
-    height: 56px;
-    width: 360px;
-    border-radius: 10px;
-    background-color: var(--white);
-    border: none;
-    position: absolute;
-    top: 83px;
-    padding-left: 47px;
+  height: 56px;
+  width: 360px;
+  border-radius: 10px;
+  background-color: var(--white);
+  border: none;
+  position: absolute;
+  top: 83px;
+  padding-left: 47px;
 }
 
-
 .location_text {
-    pointer-events: none;
-    color: var(--gray);
-    font-size: 16px;
+  pointer-events: none;
+  color: var(--gray);
+  font-size: 16px;
 }
 
 .location_search_container {
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
-    margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin-bottom: 64px;
 }
 
 .location_svg {
-    fill: transparent;
-    stroke: var(--black);
-    width: 18px;
-    height: 20px;
-    pointer-events: none;
+  fill: transparent;
+  stroke: var(--black);
+  width: 18px;
+  height: 20px;
+  pointer-events: none;
 }
 
 .svg_container {
-    pointer-events: none;
-    position: relative;
-    top: 23px;
-    left: 18px;
-    width: 320px;
+  pointer-events: none;
+  position: relative;
+  top: 23px;
+  left: 18px;
+  width: 320px;
 }
 
 .input_placeholder {
-    pointer-events: none;
-    font-size: 16px;
-    position: relative;
-    top: -7px;
-    left: 45px;
+  pointer-events: none;
+  font-size: 16px;
+  position: relative;
+  top: -7px;
+  left: 45px;
 }

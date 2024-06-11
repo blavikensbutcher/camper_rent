@@ -1,42 +1,42 @@
 .review_container {
-    width: 390px;
+  width: 390px;
 }
 
 .image_reviewer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--red);
-    width: 60px;
-    height: 60px;
-    border-radius: 100px;
-    background-color: var(--silver);
-    font-size: 20px;
-    font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--red);
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  background-color: var(--silver);
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .comment {
-    color: var(--gray);
-    font-size: 16px;
+  color: var(--gray);
+  font-size: 16px;
 }
 
 .reviewer_name {
-    font-size: 16px;
-    font-weight: 600;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .icon {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .zeroicon {
-    fill: rgba(242, 244, 247, 1);
-    stroke: transparent;
-        width: 18px;
-        height: 18px;
+  fill: rgba(242, 244, 247, 1);
+  stroke: transparent;
+  width: 18px;
+  height: 18px;
 }
 
 .people_container {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }

@@ -1,39 +1,38 @@
-
 .header_text {
-    color: var(--black);
-    border-bottom: 1px solid rgba(16, 24, 40, 0.1);
-    padding-bottom: 24px;
-    margin-bottom: 24px;
+  color: var(--black);
+  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .vehicle_btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 17px;
-    border: 1px solid var(--outline);
-    border-radius: 10px;
-    width: 115px;
-    height: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 17px;
+  border: 1px solid var(--outline);
+  border-radius: 10px;
+  width: 115px;
+  height: 95px;
 }
 
 .vehicle_btn:hover {
-        border-color: var(--red);
-        transition: var(--animation-duration);
+  border-color: var(--red);
+  transition: var(--animation-duration);
 }
 
 .btn_list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 10px;
-    margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-bottom: 32px;
 }
 
 .vehicle_svg {
-    pointer-events: none;
-    display: flex;
-    flex-shrink: 0;
-    width: 45px;
-    height: 33px;
+  pointer-events: none;
+  display: flex;
+  flex-shrink: 0;
+  width: 45px;
+  height: 33px;
 }

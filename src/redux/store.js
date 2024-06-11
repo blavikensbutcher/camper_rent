@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
   FLUSH,
@@ -7,16 +7,16 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import { filtersReducer } from './filters/filterSlice';
-import { campersApi, campersReducer } from './contacts/camperApi.js';
+} from "redux-persist";
+import { filtersReducer } from "./filters/filterSlice";
+import { campersApi, campersReducer } from "./contacts/camperApi.js";
 
 export const store = configureStore({
   reducer: {
     filters: filtersReducer,
     [campersApi.reducerPath]: campersReducer,
   },
-  middleware: getDefaultMiddleware => [
+  middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
@@ -24,7 +24,6 @@ export const store = configureStore({
     }),
     campersApi.middleware,
   ],
-
 });
 
 export const persistor = persistStore(store);

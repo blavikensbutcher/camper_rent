@@ -20,24 +20,25 @@ export default function Home() {
     dispatch(addFilteredVans(favorite));
   }, [favorite]);
 
-  return (<>
-    <div style={{ display: "flex", columnGap: "25px" }}>
-      <SettingsList
-        filteredCampers={filteredCampers}
-        setFilteredCampers={setFilteredCampers}
-      />
-      <CampersList
-        data={data}
-        campers={campers}
-        setCampers={setCampers}
-        filteredCampers={filteredCampers}
-        setFilteredCampers={setFilteredCampers}
-        page={page}
-        setPage={setPage}
-        favorite={favorite}
-        setFavorite={setFavorite}
-      />
-    </div>
-      </>
+  return (
+    <>
+      <div style={{ display: "flex", columnGap: "25px" }}>
+        <SettingsList
+          filteredCampers={filteredCampers}
+          setFilteredCampers={setFilteredCampers}
+        />
+        <CampersList
+          data={data}
+          campers={campers}
+          setCampers={setCampers}
+          filteredCampers={filteredCampers}
+          setFilteredCampers={setFilteredCampers}
+          page={page}
+          setPage={setPage}
+          favorite={favorite}
+          setFavorite={setFavorite}
+        />
+      </div>
+    </>
   );
 }

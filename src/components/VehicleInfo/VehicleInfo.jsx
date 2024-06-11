@@ -1,13 +1,14 @@
-import css from './VehicleInfo.module.css'
+import css from "./VehicleInfo.module.css";
 
-export const VehicleInfo = ({data}) => {
-
+export const VehicleInfo = ({ data }) => {
   return (
     <div className={css.details_container}>
       <h3 className={css.header}>Vehicle Details</h3>
       <div className={css.element}>
         <p className={css.description}>Form</p>
-        <p className={css.description}>{data.form.charAt(0).toUpperCase() + data.form.slice(1)}</p>
+        <p className={css.description}>
+          {data.form.charAt(0).toUpperCase() + data.form.slice(1)}
+        </p>
       </div>
       <div className={css.element}>
         <p className={css.description}>Length</p>

@@ -1,25 +1,23 @@
-
-
 .header {
-    font-size: 20px;
-    font-weight: 600;
-    padding-bottom: 24px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
 }
 
 .description {
-    margin-bottom: 14px;
-    font-size: 18px;
-    font-weight: 500;
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .description_last {
-    font-size: 18px;
-    font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .element {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }

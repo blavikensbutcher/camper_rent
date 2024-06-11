@@ -7,7 +7,6 @@
   padding-left: 18px;
 }
 
-
 .form {
   display: flex;
   flex-direction: column;
@@ -27,7 +26,6 @@
   padding: 14px;
 }
 
-
 .datetime_picker {
   width: 400px;
   height: 56px;
@@ -38,6 +36,5 @@
 }
 
 .error {
-  color: var(--red)
+  color: var(--red);
 }
-

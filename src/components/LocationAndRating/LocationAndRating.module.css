@@ -1,25 +1,25 @@
 .location_reviews_container {
-    display: flex;
-    column-gap: 16px;
-    margin-bottom: 24px;
+  display: flex;
+  column-gap: 16px;
+  margin-bottom: 24px;
 }
 
 .location_span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
 }
 
 .location_svg {
-    stroke: var(--black);
-    fill: transparent;
-    width: 16px;
-    height: 16px;
+  stroke: var(--black);
+  fill: transparent;
+  width: 16px;
+  height: 16px;
 }
 
 .icon {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }

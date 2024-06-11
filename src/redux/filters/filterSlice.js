@@ -20,14 +20,13 @@ const filtersPersistConfig = {
   storage,
 };
 
-
 export const { addFilteredVans } = filtersSlice.actions;
 
 export const filtersReducer = persistReducer(
-    filtersPersistConfig,
-    filtersSlice.reducer
+  filtersPersistConfig,
+  filtersSlice.reducer,
 );
 
 // Исправленный селектор
-export const selectFilteredVans = state => state.filters.filteredVans;
-export const selectFavorite = state => state.filters.isFavorite;
+export const selectFilteredVans = (state) => state.filters.filteredVans;
+export const selectFavorite = (state) => state.filters.isFavorite;
