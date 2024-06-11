@@ -14,7 +14,7 @@ export const CampersList = ({
     setPage(page + 3);
   };
 
-  if (!campers.length) {
+  if (!campers.length && !favorite.length) {
     return <Loader />;
   }
 

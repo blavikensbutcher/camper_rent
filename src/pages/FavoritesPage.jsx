@@ -18,7 +18,6 @@ export default function FavoritesPage() {
   const [favorite, setFavorite] = useState(useSelector(selectFilteredVans));
   const dispatch = useDispatch();
 
-  const kek = useSelector(selectFilteredVans);
 
   useEffect(() => {
     dispatch(addFilteredVans(favorite));
@@ -38,7 +37,7 @@ export default function FavoritesPage() {
       />
       {favorite.length > 0 ? (
         <CampersList
-          data={data}
+          data={favorite}
           campers={campers}
           setCampers={setCampers}
           filteredCampers={filteredCampers}
