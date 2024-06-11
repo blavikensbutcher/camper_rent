@@ -49,12 +49,6 @@
     border-radius: 10px;
     width: calc(100% / 3 - 10px);
     height: 310px;
-    object-fit: cover;
-
-}
-
-.image:first-child {
-    object-position: right;
 }
 
 .track_descr {
@@ -92,4 +86,15 @@
     display: flex;
     column-gap: 16px;
     margin-bottom: 16px;
+}
+
+.image_set {
+    height: 310px;
+    object-fit: cover;
+}
+
+.first_img {
+    height: 310px;
+    object-fit: cover;
+    object-position: right;
 }

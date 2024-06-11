@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "../../../shared/components/Button/Button.jsx";
 import css from "./CamperItem.module.css";
 import SharedSVG from "../../../shared/sharedSVG/SharedSvg.jsx";
 import { truncateString } from "../../../../helpers/truncateString.js";
 import { TagsList } from "../../TagsList/TagsList.jsx";
 import { ModalWindow } from "../../../shared/components/Modal/ModalWindow.jsx";
-import { handleHeart } from "../../../../helpers/handleHeart.js";
 import { avrgMark } from "../../../../helpers/avrgMark.js";
 import { LocationAndRating } from "../../LocationAndRating/LocationAndRating.jsx";
 import { useSelector } from "react-redux";
@@ -29,8 +28,7 @@ export const CamperItem = ({ data, favorite, setFavorite }) => {
     showModal();
   };
 
-  const handleHeartClick = (e) => {
-    let tag = handleHeart(e);
+  const handleHeartClick = () => {
 
     if (!isObjectIn) {
       setFavorite((prevState) => {

@@ -7,7 +7,7 @@ import {
   addFilteredVans,
   selectFilteredVans,
 } from "../redux/filters/filterSlice.js";
-import {NoFavorites} from "../components/NoFavorites/NoFavorites.jsx";
+import { NoFavorites } from "../components/NoFavorites/NoFavorites.jsx";
 
 export default function Home() {
   const { data } = useGetAllCampersQuery();
@@ -26,28 +26,29 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(addFilteredVans(favorite));
-
   }, [favorite]);
 
   return (
-    <>
-      <div style={{ display: "flex", columnGap: "25px" }}>
-        <SettingsList
+    <div style={{ display: "flex", columnGap: "25px" }}>
+      <SettingsList
+        filteredCampers={filteredCampers}
+        setFilteredCampers={setFilteredCampers}
+      />
+      {filteredCampers.length <= 0 ? (
+        <NoFavorites>Found nothing try again</NoFavorites>
+      ) : (
+        <CampersList
+          data={data}
+          campers={campers}
+          setCampers={setCampers}
           filteredCampers={filteredCampers}
           setFilteredCampers={setFilteredCampers}
+          page={page}
+          setPage={setPage}
+          favorite={favorite}
+          setFavorite={setFavorite}
         />
-        {filteredCampers.length <= 0 ?<NoFavorites>Found nothing try again</NoFavorites> : <CampersList
-            data={data}
-            campers={campers}
-            setCampers={setCampers}
-            filteredCampers={filteredCampers}
-            setFilteredCampers={setFilteredCampers}
-            page={page}
-            setPage={setPage}
-            favorite={favorite}
-            setFavorite={setFavorite}
-        />}
-      </div>
-    </>
+      )}
+    </div>
   );
 }

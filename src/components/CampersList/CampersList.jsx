@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
 import { CamperItem } from "./CamperItem/CamperItem.jsx";
 import css from "./CampersList.module.css";
 import { Loader } from "../../shared/components/Loader/Loader.jsx";
 
 export const CampersList = ({
-  data,
   campers,
   filteredCampers,
-  setCampers,
-  setFilteredCampers,
   page,
   setPage,
   favorite,
@@ -17,7 +13,6 @@ export const CampersList = ({
   const incrementPage = () => {
     setPage(page + 3);
   };
-
 
   if (!campers.length) {
     return <Loader />;

@@ -23,91 +23,95 @@ export const ModalWindow = ({ isModalOpen, handleCancel, avrgMark, data }) => {
   };
 
   return (
-    <>
-      <Modal
-        open={isModalOpen}
-        onCancel={handleCancel}
-        footer={null}
-        width={982}
-        style={{ padding: 40 }}
-      >
-        <div className={css.modal_container}>
-          <div className={css.description_container}>
-            <div>
-              <h2 className={css.header_name}>{data.name}</h2>
-              <LocationAndRating
-                data={data}
-                avMark={avrgMark}
-                className={css.container}
-              />
-              <p className={css.price}>€{data.price}.00 </p>
-            </div>
-            <div className={css.image_container}>
+    <Modal
+      open={isModalOpen}
+      onCancel={handleCancel}
+      footer={null}
+      width={982}
+      style={{ padding: 40 }}
+    >
+      <div className={css.modal_container}>
+        <div className={css.description_container}>
+          <div>
+            <h2 className={css.header_name}>{data.name}</h2>
+            <LocationAndRating
+              data={data}
+              avMark={avrgMark}
+              className={css.container}
+            />
+            <p className={css.price}>€{data.price}.00 </p>
+          </div>
+          <ul className={css.image_container}>
+            <li  className={css.image}>
               <img
-                className={css.image}
+                className={css.first_img}
                 src={data.gallery[0]}
-                alt="Track image 1"
+                alt="Tracker 1"
               />
+            </li>
+            <li className={css.image}>
               <img
-                className={css.image}
+                className={css.image_set}
                 src={data.gallery[1]}
-                alt="Track image 2"
+                alt="Tracker 2"
               />
+            </li>
+            <li className={css.image}>
               <img
-                className={css.image}
+                className={css.image_set}
                 src={data.gallery[2]}
-                alt="Track image 3"
+                alt="Tracker 3"
               />
-            </div>
-            <p className={css.track_descr}>
-              {truncateString(data.description, 759)}
-            </p>
+            </li>
+          </ul>
+          <p className={css.track_descr}>
+            {truncateString(data.description, 759)}
+          </p>
 
-            <ul className={css.toggle_menu}>
+          <ul className={css.toggle_menu}>
+            <li>
+              <button className={css.toggle_menu_item} onClick={openFeatures}>
+                Features
+              </button>
+            </li>
+            <li>
+              <button className={css.toggle_menu_item} onClick={openReviews}>
+                Reviews
+              </button>
+            </li>
+          </ul>
+
+          {showFeatures && (
+            <div className={css.review_container}>
+              <div>
+                <ul className={css.features_ul}>
+                  <li>
+                    <TagsList data={data} />
+                  </li>
+                  <li>
+                    <VehicleInfo data={data} />
+                  </li>
+                </ul>
+              </div>
+              <div>
+                {" "}
+                <BookingForm />
+              </div>
+            </div>
+          )}
+
+          {showReviews && (
+            <ul className={css.review_container}>
               <li>
-                <button className={css.toggle_menu_item} onClick={openFeatures}>
-                  Features
-                </button>
+                <ReviewSection data={data} />
               </li>
               <li>
-                <button className={css.toggle_menu_item} onClick={openReviews}>
-                  Reviews
-                </button>
+                <BookingForm />
               </li>
             </ul>
-
-            {showFeatures && (
-              <div className={css.review_container}>
-                <div>
-                  <ul className={css.features_ul}>
-                    <li>
-                      <TagsList data={data} />
-                    </li>
-                    <li>
-                      <VehicleInfo data={data} />
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  {" "}
-                  <BookingForm />
-                </div>
-              </div>
-            )}
-
-            {showReviews && (
-              <ul className={css.review_container}>
-                <li>
-                  <ReviewSection data={data} />
-                </li>
-                <li>
-                  <BookingForm />
-                </li>
-              </ul>
-            )}
-          </div>
+          )}
         </div>
-      </Modal>
-    </>
+      </div>
+    </Modal>
   );
 };
