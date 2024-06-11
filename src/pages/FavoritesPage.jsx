@@ -37,7 +37,7 @@ export default function FavoritesPage() {
       />
       {favorite.length > 0 ? (
         <CampersList
-          data={favorite}
+          data={data}
           campers={campers}
           setCampers={setCampers}
           filteredCampers={filteredCampers}
