@@ -7,6 +7,7 @@ import {
   addFilteredVans,
   selectFilteredVans,
 } from "../redux/filters/filterSlice.js";
+import {NoFavorites} from "../components/NoFavorites/NoFavorites.jsx";
 
 export default function Home() {
   const { data } = useGetAllCampersQuery();
@@ -17,7 +18,15 @@ export default function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (data) {
+      setCampers(data);
+      setFilteredCampers(data.slice(0, page));
+    }
+  }, [data, page]);
+
+  useEffect(() => {
     dispatch(addFilteredVans(favorite));
+
   }, [favorite]);
 
   return (
@@ -27,17 +36,17 @@ export default function Home() {
           filteredCampers={filteredCampers}
           setFilteredCampers={setFilteredCampers}
         />
-        <CampersList
-          data={data}
-          campers={campers}
-          setCampers={setCampers}
-          filteredCampers={filteredCampers}
-          setFilteredCampers={setFilteredCampers}
-          page={page}
-          setPage={setPage}
-          favorite={favorite}
-          setFavorite={setFavorite}
-        />
+        {filteredCampers.length <= 0 ?<NoFavorites>Found nothing try again</NoFavorites> : <CampersList
+            data={data}
+            campers={campers}
+            setCampers={setCampers}
+            filteredCampers={filteredCampers}
+            setFilteredCampers={setFilteredCampers}
+            page={page}
+            setPage={setPage}
+            favorite={favorite}
+            setFavorite={setFavorite}
+        />}
       </div>
     </>
   );

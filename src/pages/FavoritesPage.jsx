@@ -49,7 +49,7 @@ export default function FavoritesPage() {
           setFavorite={setFavorite}
         />
       ) : (
-        <NoFavorites />
+        <NoFavorites>you didn't add anything</NoFavorites>
       )}
     </div>
   );

@@ -1,26 +1,21 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../../shared/components/Button/Button.jsx";
 import css from "./CamperItem.module.css";
 import SharedSVG from "../../../shared/sharedSVG/SharedSvg.jsx";
 import { truncateString } from "../../../../helpers/truncateString.js";
 import { TagsList } from "../../TagsList/TagsList.jsx";
 import { ModalWindow } from "../../../shared/components/Modal/ModalWindow.jsx";
-import {handleHeart} from "../../../../helpers/handleHeart.js";
-import {avrgMark} from "../../../../helpers/avrgMark.js";
-import {LocationAndRating} from "../../LocationAndRating/LocationAndRating.jsx";
-import {useSelector} from "react-redux";
-import {selectFilteredVans} from "../../../redux/filters/filterSlice.js";
+import { handleHeart } from "../../../../helpers/handleHeart.js";
+import { avrgMark } from "../../../../helpers/avrgMark.js";
+import { LocationAndRating } from "../../LocationAndRating/LocationAndRating.jsx";
+import { useSelector } from "react-redux";
+import { selectFilteredVans } from "../../../redux/filters/filterSlice.js";
 
 export const CamperItem = ({ data, favorite, setFavorite }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const filterStorage = useSelector(selectFilteredVans)
+  const filterStorage = useSelector(selectFilteredVans);
 
-  const isObjectIn = filterStorage.some(item => item._id === data._id)
-
-  useEffect(() => {
-    console.log(filterStorage)
-  }, [filterStorage]);
-
+  const isObjectIn = filterStorage.some((item) => item._id === data._id);
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -35,25 +30,19 @@ export const CamperItem = ({ data, favorite, setFavorite }) => {
   };
 
   const handleHeartClick = (e) => {
-    let tag = handleHeart(e)
+    let tag = handleHeart(e);
 
-
-
-
-      if (!isObjectIn) {
-        setFavorite(prevState => {
-          return [...prevState, data];
-        })
-      } else {
-        const removed = favorite.filter(item => item._id !== data._id)
-        setFavorite(removed)
-      }
-
+    if (!isObjectIn) {
+      setFavorite((prevState) => {
+        return [...prevState, data];
+      });
+    } else {
+      const removed = favorite.filter((item) => item._id !== data._id);
+      setFavorite(removed);
     }
+  };
 
-
-
-    const avMark = avrgMark(data);
+  const avMark = avrgMark(data);
 
   return (
     <>
@@ -71,11 +60,14 @@ export const CamperItem = ({ data, favorite, setFavorite }) => {
               <p className={css.price}>
                 €{data.price}.00{" "}
                 <button className={css.heart_btn} onClick={handleHeartClick}>
-                  <SharedSVG svgId={"heart"} className={isObjectIn ? css.heart_full : css.heart_svg} />
+                  <SharedSVG
+                    svgId={"heart"}
+                    className={isObjectIn ? css.heart_full : css.heart_svg}
+                  />
                 </button>
               </p>
             </div>
-            <LocationAndRating data={data} avMark={avMark}/>
+            <LocationAndRating data={data} avMark={avMark} />
             <p className={css.camper_descr}>
               {truncateString(data.description, 100)}
             </p>

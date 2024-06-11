@@ -18,12 +18,6 @@ export const CampersList = ({
     setPage(page + 3);
   };
 
-  useEffect(() => {
-    if (data) {
-      setCampers(data);
-      setFilteredCampers(data.slice(0, page));
-    }
-  }, [data, page]);
 
   if (!campers.length) {
     return <Loader />;
