@@ -2,7 +2,6 @@ import { LocationSearch } from "../LocationSearch/LocationSearch.jsx";
 import css from "./SettingsList.module.css";
 import { VehicleEquipment } from "../VehicleEquipment/VehicleEquipment.jsx";
 import { VehicleType } from "../VehicleType/VehicleType.jsx";
-import Button from "../../shared/components/Button/Button.jsx";
 import { FavoriteSection } from "../FavoriteSection/FavoriteSection.jsx";
 
 export const SettingsList = ({ filteredCampers, setFilteredCampers }) => {
@@ -14,7 +13,6 @@ export const SettingsList = ({ filteredCampers, setFilteredCampers }) => {
       />
       <FavoriteSection />
       <VehicleEquipment
-        filteredCampers={filteredCampers}
         setFilteredCampers={setFilteredCampers}
       />
       <VehicleType

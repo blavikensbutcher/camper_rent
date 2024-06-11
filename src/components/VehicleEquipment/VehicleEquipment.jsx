@@ -1,12 +1,16 @@
 import css from "./VehicleEquipment.module.css";
 import SharedSVG from "../../shared/sharedSVG/SharedSvg.jsx";
+import {useGetAllCampersQuery} from "../../redux/contacts/camperApi.js";
 
-export const VehicleEquipment = ({ filteredCampers, setFilteredCampers }) => {
+export const VehicleEquipment = ({ setFilteredCampers }) => {
+
+  const {data} = useGetAllCampersQuery()
+
   function handleClick(e) {
     const chosenValue = e.target.dataset.id;
 
     setFilteredCampers(
-      filteredCampers.filter(
+        data.filter(
         (item) =>
           item.transmission === chosenValue || item.details[chosenValue] > 0,
       ),
