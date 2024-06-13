@@ -6,7 +6,6 @@ const filtersSlice = createSlice({
   name: "filter",
   initialState: {
     filteredVans: [],
-    isFavorite: false,
   },
   reducers: {
     addFilteredVans: (state, action) => {

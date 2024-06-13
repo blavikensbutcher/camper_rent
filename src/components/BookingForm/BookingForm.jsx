@@ -12,7 +12,7 @@ export const BookingForm = () => {
       .min(3, "C'mon write a real name")
       .max(50, "Too long")
       .required("Must be not empty"),
-    email: Yup.string().email("Email should be valid"),
+    email: Yup.string().email("Email should be valid").required(),
     date: Yup.date().required("Date must be correct"),
     comment: Yup.string(),
   });
