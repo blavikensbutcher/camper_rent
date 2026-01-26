@@ -3,12 +3,7 @@ import SharedSVG from "../../shared/sharedSVG/SharedSvg.jsx";
 import { useGetAllCampersQuery } from "../../redux/contacts/camperApi.js";
 import clsx from "clsx";
 
-export const VehicleType = ({
-  filteredCampers,
-  setFilteredCampers,
-  vanType,
-  setVanType,
-}) => {
+export const VehicleType = ({ setFilteredCampers, vanType, setVanType }) => {
   const { data } = useGetAllCampersQuery();
 
   const handleClick = (e) => {

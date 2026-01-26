@@ -1,21 +1,75 @@
 # Camper rental service
 
-run ``npm run dev``
-port: 8000
+Вебзастосунок для перегляду кемперів, додавання в обрані та бронювання через форму.
 
-When making a GET request, **RTK Query** was used, while **Redux Toolkit** was utilized for storage management.
+## Вимоги
 
+- **Node.js**: рекомендовано **20+**
+- **npm**: будь-яка сучасна версія (йде разом із Node.js)
 
-"**/**" - _Home page with a general description of the services provided by the company_
+## Швидкий старт (локально)
 
-"**/favorites**" - _Page with advertisements that have been added by the user to favorites by hearth click_
+Встановити залежності:
 
-If a user navigates to a route that does not exist, they should be redirected to the home page.
+```bash
+npm install
+```
 
-When the "Show more" button is clicked, a modal window should open with detailed information about the camper.
+Запустити dev-сервер:
 
-The modal window should close when the user clicks on the close button, clicks on the backdrop, or presses the Esc key.
+```bash
+npm run dev
+```
 
-The modal window should contain information about the camper's features and reviews.
+Відкрити у браузері: `http://localhost:8000`
 
-The modal window should also include a form for booking the camper. The fields "name," "email," and "booking date" are mandatory. (In case of invalid data, the form should not be submitted; in the case of valid data, the page should refresh.)
+## Збірка і превʼю (як прод)
+
+Зібрати проєкт:
+
+```bash
+npm run build
+```
+
+Запустити локальне превʼю зібраної версії:
+
+```bash
+npm run preview
+```
+
+Відкрити у браузері: `http://localhost:8080`
+
+## Лінт
+
+```bash
+npm run lint
+```
+
+## Docker (опційно)
+
+Зібрати образ:
+
+```bash
+docker build -t camper-rent .
+```
+
+Запустити контейнер (dev-сервер всередині слухає **8000** порт):
+
+```bash
+docker run --rm -it -p 8000:8000 camper-rent
+```
+
+Відкрити у браузері: `http://localhost:8000`
+
+## Сторінки та поведінка
+
+- **`/`**: головна сторінка зі списком/описом.
+- **`/favorites`**: сторінка з обраними оголошеннями (після кліку по “серцю”).
+- **Невідомий маршрут**: редирект на головну.
+- **Modal “Show more”**: детальна інформація про кемпер, фічі та відгуки; закриття по кнопці, кліку на бекдроп або `Esc`.
+- **Форма бронювання**: обовʼязкові поля — `name`, `email`, `booking date` (при валідних даних сторінка перезавантажується).
+
+## Технології
+
+- **React + Vite**
+- **Redux Toolkit / RTK Query** для роботи з даними і станом

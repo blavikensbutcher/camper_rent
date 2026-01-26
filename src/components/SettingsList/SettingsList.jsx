@@ -22,7 +22,6 @@ export const SettingsList = ({ filteredCampers, setFilteredCampers }) => {
         setSelectedFilter={setSelectedFilter}
       />
       <VehicleType
-        filteredCampers={filteredCampers}
         setFilteredCampers={setFilteredCampers}
         vanType={vanType}
         setVanType={setVanType}
