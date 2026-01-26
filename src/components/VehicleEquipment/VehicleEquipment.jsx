@@ -1,19 +1,24 @@
 import css from "./VehicleEquipment.module.css";
 import SharedSVG from "../../shared/sharedSVG/SharedSvg.jsx";
-import {useGetAllCampersQuery} from "../../redux/contacts/camperApi.js";
+import { useGetAllCampersQuery } from "../../redux/contacts/camperApi.js";
+import clsx from "clsx";
 
-export const VehicleEquipment = ({ setFilteredCampers }) => {
-
-  const {data} = useGetAllCampersQuery()
+export const VehicleEquipment = ({
+  setFilteredCampers,
+  selectedFilter,
+  setSelectedFilter,
+}) => {
+  const { data } = useGetAllCampersQuery();
 
   function handleClick(e) {
     const chosenValue = e.target.dataset.id;
+    setSelectedFilter(chosenValue);
 
     setFilteredCampers(
-        data.filter(
+      data.filter(
         (item) =>
-          item.transmission === chosenValue || item.details[chosenValue] > 0,
-      ),
+          item.transmission === chosenValue || item.details[chosenValue] > 0
+      )
     );
   }
 
@@ -23,31 +28,50 @@ export const VehicleEquipment = ({ setFilteredCampers }) => {
       <h3 className={css.header_text}>Vehicle Equipment</h3>
       <div className={css.btn_list}>
         <button
-          className={css.filter_btn}
+          className={clsx(
+            css.filter_btn,
+            selectedFilter === "airConditioner" && css.active
+          )}
           onClick={handleClick}
           data-id="airConditioner"
         >
           <SharedSVG className={css.svg_img_two} svgId={"wind"} /> AC
         </button>
         <button
-          className={css.filter_btn}
+          className={clsx(
+            css.filter_btn,
+            selectedFilter === "automatic" && css.active
+          )}
           onClick={handleClick}
           data-id="automatic"
         >
           <SharedSVG className={css.svg_img} svgId={"automatic"} /> Automatic
         </button>
         <button
-          className={css.filter_btn}
+          className={clsx(
+            css.filter_btn,
+            selectedFilter === "kitchen" && css.active
+          )}
           onClick={handleClick}
           data-id="kitchen"
         >
           <SharedSVG className={css.svg_img} svgId={"kitchen"} /> Kitchen
         </button>
-        <button className={css.filter_btn} onClick={handleClick} data-id="TV">
+        <button
+          className={clsx(
+            css.filter_btn,
+            selectedFilter === "TV" && css.active
+          )}
+          onClick={handleClick}
+          data-id="TV"
+        >
           <SharedSVG className={css.svg_img} svgId={"tv"} /> TV
         </button>
         <button
-          className={css.filter_btn}
+          className={clsx(
+            css.filter_btn,
+            selectedFilter === "shower" && css.active
+          )}
           onClick={handleClick}
           data-id="shower"
         >

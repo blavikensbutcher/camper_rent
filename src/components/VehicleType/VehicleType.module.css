@@ -15,11 +15,16 @@
   border-radius: 10px;
   width: 115px;
   height: 95px;
+  transition: var(--animation-duration);
 }
 
 .vehicle_btn:hover {
   border-color: var(--red);
-  transition: var(--animation-duration);
+}
+
+.vehicle_btn.active {
+  border-color: var(--red);
+  background-color: rgba(255, 0, 0, 0.05);
 }
 
 .btn_list {

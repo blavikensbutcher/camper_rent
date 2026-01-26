@@ -1,14 +1,20 @@
 import css from "./VehicleType.module.css";
 import SharedSVG from "../../shared/sharedSVG/SharedSvg.jsx";
-import Fuse from "fuse.js";
-import { useState, useMemo } from "react";
 import { useGetAllCampersQuery } from "../../redux/contacts/camperApi.js";
+import clsx from "clsx";
 
-export const VehicleType = ({ filteredCampers, setFilteredCampers }) => {
+export const VehicleType = ({
+  filteredCampers,
+  setFilteredCampers,
+  vanType,
+  setVanType,
+}) => {
   const { data } = useGetAllCampersQuery();
 
   const handleClick = (e) => {
-    const chosenValue = String(e.target.dataset.id);
+    const chosenValue = String(e.currentTarget.dataset.id);
+
+    setVanType(chosenValue);
     setFilteredCampers(data.filter((item) => item.form === chosenValue));
   };
 
@@ -17,7 +23,10 @@ export const VehicleType = ({ filteredCampers, setFilteredCampers }) => {
       <h3 className={css.header_text}>Vehicle Type</h3>
       <div className={css.btn_list}>
         <button
-          className={css.vehicle_btn}
+          className={clsx(
+            css.vehicle_btn,
+            vanType === "panelTruck" && css.active
+          )}
           onClick={handleClick}
           data-id="panelTruck"
         >
@@ -25,7 +34,10 @@ export const VehicleType = ({ filteredCampers, setFilteredCampers }) => {
           Van
         </button>
         <button
-          className={css.vehicle_btn}
+          className={clsx(
+            css.vehicle_btn,
+            vanType === "Fully Integrated" && css.active
+          )}
           onClick={handleClick}
           data-id="Fully Integrated"
         >
@@ -33,7 +45,7 @@ export const VehicleType = ({ filteredCampers, setFilteredCampers }) => {
           Fully Integrated
         </button>
         <button
-          className={css.vehicle_btn}
+          className={clsx(css.vehicle_btn, vanType === "alcove" && css.active)}
           onClick={handleClick}
           data-id="alcove"
         >
