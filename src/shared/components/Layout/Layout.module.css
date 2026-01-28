@@ -28,9 +28,3 @@
     max-width: 1410px;
   }
 }
-
-@media screen and (min-width: 2560px) {
-  .container {
-    max-width: 90%;
-  }
-}
